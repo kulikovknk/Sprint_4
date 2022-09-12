@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import qa_scooter.ScooterHomePage;
 
-public class checkLogoTest extends BaseUITest {
+public class CheckLogoTest extends BaseUITest {
 
     @Test
     public void checkScooterLogoTest() {

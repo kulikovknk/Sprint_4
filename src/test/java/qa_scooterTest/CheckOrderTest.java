@@ -55,28 +55,28 @@ public class CheckOrderTest extends BaseUITest {
     }
 
     @Test
-    public void checkOrderUpperOrderButtonTest() {
+    public void checkUpperOrderButtonTest() {
 
         ScooterHomePage objScooterHomePage = new ScooterHomePage(driver);
         objScooterHomePage.openHomePage();
         objScooterHomePage.clickUpperOrderButton();
 
-        enterOrderDetails();
+        checkOrderInputTest();
 
     }
 
     @Test
-    public void checkOrderBottomOrderButtonTest() {
+    public void checkBottomOrderButtonTest() {
 
         ScooterHomePage objScooterHomePage = new ScooterHomePage(driver);
         objScooterHomePage.openHomePage();
         objScooterHomePage.clickBottomOrderButton();
 
-        enterOrderDetails();
+        checkOrderInputTest();
 
     }
 
-    private void enterOrderDetails(){
+    private void checkOrderInputTest(){
 
         ScooterCustomerDetailsPage objScooterCustomerDetailsPage = new ScooterCustomerDetailsPage(driver);
         boolean isCustomerDetailsFilledWithNoErrors = objScooterCustomerDetailsPage.inputCustomerDetails(customerName, customerSurname, customerAddress, customerMetroStation, customerPhoneNumber);

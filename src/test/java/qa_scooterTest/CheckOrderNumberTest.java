@@ -7,13 +7,13 @@ import org.junit.runners.Parameterized;
 import qa_scooter.ScooterHomePage;
 
 @RunWith(Parameterized.class)
-public class checkOrderNumberTest extends BaseUITest {
+public class CheckOrderNumberTest extends BaseUITest {
 
     //Поля тестового класса
     private final String orderNumber;
 
     //Конструктор тестового класса
-    public checkOrderNumberTest(String orderNumber) {
+    public CheckOrderNumberTest(String orderNumber) {
         this.orderNumber = orderNumber;
     }
 

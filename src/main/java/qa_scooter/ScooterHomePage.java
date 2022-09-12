@@ -11,16 +11,16 @@ import java.time.Duration;
 public class ScooterHomePage extends ScooterBasePage {
 
     //Ссылка на главную страницу сервиса
-    private final String scooterHomePage = "https://qa-scooter.praktikum-services.ru/";
+    public static final String SCOOTER_HOME_PAGE = "https://qa-scooter.praktikum-services.ru/";
     //Ссылка на главную страницу Яндекса
-    private final String yandexHomePage = "https://yandex.ru";
+    public static final String YANDEX_HOME_PAGE = "https://yandex.ru";
 
     //Окно Cookies, кнопка "да все привыкли"
     private final By confirmCookiesButton = By.id("rcc-confirm-button");
     //Кпопка "Заказать" вверху страницы
-    private final By OrderButtonOnTheTop = By.xpath(".//div[@class = 'Header_Nav__AGCXC']//button[text() = 'Заказать']");
+    private final By orderButtonOnTheTop = By.xpath(".//div[@class = 'Header_Nav__AGCXC']//button[text() = 'Заказать']");
     //Кпопка "Заказать" внизу страницы
-    private final By OrderButtonOnTheBottom = By.xpath(".//div[@class = 'Home_FinishButton__1_cWm']//button[text() = 'Заказать']");
+    private final By orderButtonOnTheBottom = By.xpath(".//div[@class = 'Home_FinishButton__1_cWm']//button[text() = 'Заказать']");
     //Логотип сервиса Самокат
     private final By scooterLogo = By.xpath(".//a[@class = 'Header_LogoScooter__3lsAR']//img[@alt = 'Scooter']");
     //Логотип Яндекса
@@ -43,7 +43,7 @@ public class ScooterHomePage extends ScooterBasePage {
     //Открыть страницу сервиса
     public void openHomePage() {
 
-        driver.get(scooterHomePage);
+        driver.get(SCOOTER_HOME_PAGE);
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(3));
 
@@ -76,11 +76,11 @@ public class ScooterHomePage extends ScooterBasePage {
     }
 
     public void clickUpperOrderButton() {
-        driver.findElement(OrderButtonOnTheTop).click();
+        driver.findElement(orderButtonOnTheTop).click();
     }
 
     public void clickBottomOrderButton() {
-        driver.findElement(OrderButtonOnTheBottom).click();
+        driver.findElement(orderButtonOnTheBottom).click();
     }
 
     public void clickScooterLogo() {
@@ -101,18 +101,18 @@ public class ScooterHomePage extends ScooterBasePage {
             if(!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
                 new WebDriverWait(driver, Duration.ofSeconds(3))
-                        .until(ExpectedConditions.urlContains(yandexHomePage));
+                        .until(ExpectedConditions.urlContains(YANDEX_HOME_PAGE));
                 break;
             }
         }
     }
 
     public boolean checkCurrentPageEqualsHomePage() {
-        return driver.getCurrentUrl().contains(scooterHomePage);
+        return driver.getCurrentUrl().contains(SCOOTER_HOME_PAGE);
     }
 
     public boolean checkCurrentPageIsYandexHomePage() {
-        return driver.getCurrentUrl().contains(yandexHomePage);
+        return driver.getCurrentUrl().contains(YANDEX_HOME_PAGE);
     }
 
     public void inputOrderNumber(String orderNumber) {

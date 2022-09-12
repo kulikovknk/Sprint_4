@@ -16,11 +16,11 @@ public abstract class BaseUITest {
     @BeforeClass
     public static void startUp() {
 
-      WebDriverManager.chromedriver().setup();
-      driver = new ChromeDriver();
+//      WebDriverManager.chromedriver().setup();
+//      driver = new ChromeDriver();
 
-//      WebDriverManager.firefoxdriver().setup();
-//      driver = new FirefoxDriver();
+      WebDriverManager.firefoxdriver().setup();
+      driver = new FirefoxDriver();
 
     }
 
